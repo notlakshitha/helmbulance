@@ -29,6 +29,9 @@ var credentialWords = map[string]bool{
 	"secret": true, "token": true, "jwt": true, "salt": true,
 	"credential": true, "credentials": true, "apikey": true, "key": true, "auth": true,
 	"cookie": true, "rsa": true, "connection": true, "url": true, "uri": true, "dsn": true, "keyfile": true,
+	// Run-together lowercase key names, as whole words: Kubernetes stores an ssh-auth Secret's key
+	// under ssh-privatekey. Not a general key suffix, or monkey would be a credential (#94).
+	"privatekey": true, "accesskey": true, "signingkey": true, "masterkey": true, "encryptionkey": true,
 	"dockerconfigjson": true, "dockercfg": true, "dockerconfig": true,
 }
 
